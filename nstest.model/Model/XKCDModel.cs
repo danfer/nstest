@@ -19,4 +19,5 @@ namespace nstest.model.Model
         public string day { get; set; }
     }
 
+
 }
