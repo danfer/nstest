@@ -18,5 +18,8 @@ namespace nstest.web.Models
         public string img { get; set; }
         public string title { get; set; }
         public string day { get; set; }
+        public int PreviousComicId { get; set; }
+        public int CurrentComicId { get; set; }
+        public int NextComicId { get; set; }
     }
 }

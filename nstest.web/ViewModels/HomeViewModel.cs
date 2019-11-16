@@ -16,11 +16,18 @@ namespace nstest.web.ViewModels
 
                 var viewModel = new HomeViewModel();
 
+                var previousComicId = 0;
+                
+                if (raw.num > 0)
+                    previousComicId = raw.num - 1;
+
                 viewModel.Comic = new XKCDDTO 
                 { 
                     title = raw.title,
                     link = raw.link,
-                    img = raw.img
+                    img = raw.img,
+                    PreviousComicId = previousComicId,
+                    CurrentComicId = raw.num
                 };
 
                 return viewModel;
@@ -29,7 +36,7 @@ namespace nstest.web.ViewModels
             {
                 throw;
             }
-            return null;
+           
         }
     }
 }

@@ -17,7 +17,11 @@
                 <span> Title: @Model.Comic.title</span>
             </div>
             <div>
-                <a href="@Model.Comic.link">Link to comic</a>
+                <a asp-controller="Comic"
+                   asp-action="Index"
+                   asp-route-id="@Model.Comic.PreviousComicId"
+                   asp-route-currentId="@Model.Comic.CurrentComicId"
+                   title="@Model.Comic.title">Open previous comic</a>
             </div>
         </div>
     </div>

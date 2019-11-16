@@ -14,6 +14,18 @@ namespace nstest.model.Concrete
         {
             var url = "https://xkcd.com/info.0.json";
 
+            return await GetComicData(url);
+        }
+
+        public static async Task<XKCDModel> GetComic(int id)
+        {
+            var url = $"https://xkcd.com/{id}/info.0.json";
+
+            return await GetComicData(url);            
+        }
+
+        private static async Task<XKCDModel> GetComicData(string url)
+        {
             try
             {
                 using (HttpClient client = new HttpClient())
@@ -24,16 +36,14 @@ namespace nstest.model.Concrete
                         var data = await content.ReadAsStringAsync();
                         if (data != null)
                         {
-                            var test = JsonConvert.DeserializeObject<XKCDModel>(data);
-
-                            return test;
+                            return JsonConvert.DeserializeObject<XKCDModel>(data);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw;
+
             }
             return null;
         }

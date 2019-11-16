@@ -1,0 +1,33 @@
+﻿@model nstest.web.ViewModels.ComicViewModel
+@{
+    ViewData["Title"] = "nsTest";
+}
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Hello Everybody!</h1>
+        <p>Danfer´s ASP.NET Core 3.0 App</a>.</p>
+    </div>
+    <hr />
+    <div class="text-center">
+        <div>
+            <img src="@Model.Comic.img" alt="@Model.Comic.title" height="50%" width="50%">
+        </div>
+        <div>
+            <span> Title: @Model.Comic.title</span>
+        </div>
+        <div>
+            <a asp-controller="Comic"
+               asp-action="Index"
+               asp-route-id="@Model.Comic.PreviousComicId"
+               asp-route-currentId="@Model.Comic.CurrentComicId"
+               title="@Model.Comic.title">Open previous comic</a>
+
+            <a asp-controller="Comic"
+               asp-action="Index"
+               asp-route-id="@Model.Comic.NextComicId"               
+               asp-route-currentId="@Model.Comic.CurrentComicId"
+               title="@Model.Comic.title">Open next comic</a>
+        </div>
+    </div>
+</div>
