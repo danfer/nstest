@@ -1,0 +1,8 @@
+C:\Users\dhabe\source\learn\nstest\nstest.web\nstest.model\bin\Debug\netstandard2.0\nstest.model.deps.json
+C:\Users\dhabe\source\learn\nstest\nstest.web\nstest.model\bin\Debug\netstandard2.0\nstest.model.dll
+C:\Users\dhabe\source\learn\nstest\nstest.web\nstest.model\bin\Debug\netstandard2.0\nstest.model.pdb
+C:\Users\dhabe\source\learn\nstest\nstest.web\nstest.model\obj\Debug\netstandard2.0\nstest.model.csprojAssemblyReference.cache
+C:\Users\dhabe\source\learn\nstest\nstest.web\nstest.model\obj\Debug\netstandard2.0\nstest.model.AssemblyInfoInputs.cache
+C:\Users\dhabe\source\learn\nstest\nstest.web\nstest.model\obj\Debug\netstandard2.0\nstest.model.AssemblyInfo.cs
+C:\Users\dhabe\source\learn\nstest\nstest.web\nstest.model\obj\Debug\netstandard2.0\nstest.model.dll
+C:\Users\dhabe\source\learn\nstest\nstest.web\nstest.model\obj\Debug\netstandard2.0\nstest.model.pdb

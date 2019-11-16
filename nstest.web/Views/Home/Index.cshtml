@@ -1,8 +1,24 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model nstest.web.ViewModels.HomeViewModel
+@{
+    ViewData["Title"] = "nsTest";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="display-4">Hello Everybody!</h1>
+            <p>Danfer´s ASP.NET Core 3.0 App</a>.</p>
+        </div>
+        <hr />
+        <div class="text-center"> 
+            <div>
+                <img src="@Model.Comic.img" alt="@Model.Comic.title" height="50%" width="50%">
+            </div>            
+            <div>
+                <span> Title: @Model.Comic.title</span>
+            </div>
+            <div>
+                <a href="@Model.Comic.link">Link to comic</a>
+            </div>
+        </div>
+    </div>
+

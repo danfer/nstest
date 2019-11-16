@@ -4,8 +4,8 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
-
   <ItemGroup>
+    <ProjectReference Include="..\nstest.model\nstest.model.csproj" />
   </ItemGroup>
 
 </Project>

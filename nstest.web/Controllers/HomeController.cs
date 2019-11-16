@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using nstest.web.Models;
+using nstest.web.ViewModels;
 
 namespace nstest.web.Controllers
 {
@@ -18,9 +19,11 @@ namespace nstest.web.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var viewModel = await new HomeViewModel().GetMostRecentComic();
+            
+            return View(viewModel);
         }
 
         public IActionResult Privacy()
