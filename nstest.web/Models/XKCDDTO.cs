@@ -21,5 +21,6 @@ namespace nstest.web.Models
         public int PreviousComicId { get; set; }
         public int CurrentComicId { get; set; }
         public int NextComicId { get; set; }
+        public bool Unavailable { get; set; }
     }
 }

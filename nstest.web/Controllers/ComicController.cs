@@ -16,6 +16,8 @@ namespace nstest.web.Controllers
 
             if (viewModel.Comic.NextComicId > currentId)
                 return RedirectToAction("Index", "Home");
+            if (viewModel.Comic.Unavailable)
+                return RedirectToAction("Index", new { id = id + 1, currentId = currentId });
 
             return View(viewModel);
         }

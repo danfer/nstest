@@ -20,8 +20,16 @@ namespace nstest.web.ViewModels
 
                 if (raw == null)
                 {
-                    viewModel.Comic = new XKCDDTO { NextComicId = 0 };
-                    return viewModel;
+                    if (id < currentId)
+                    {
+                        viewModel.Comic = new XKCDDTO { Unavailable = true };
+                        return viewModel;
+                    }
+                    else
+                    {
+                        viewModel.Comic = new XKCDDTO { NextComicId = id + 1 };
+                        return viewModel;
+                    }                    
                 }
               
                 var previousComicId = 0;
