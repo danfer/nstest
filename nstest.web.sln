@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nstest.web", "nstest.web\nstest.web.csproj", "{42A378CB-0FC0-402D-B611-E57752CC53C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nstest.web", "nstest.web\nstest.web.csproj", "{42A378CB-0FC0-402D-B611-E57752CC53C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nstest.model", "nstest.model\nstest.model.csproj", "{046D1DA0-495F-498D-87F5-3F0747F3514C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nstest.model", "nstest.model\nstest.model.csproj", "{046D1DA0-495F-498D-87F5-3F0747F3514C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nstest.test", "nstest.test\nstest.test.csproj", "{ABBEDE52-81CA-426F-92B0-1C6DD86D1B92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{046D1DA0-495F-498D-87F5-3F0747F3514C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{046D1DA0-495F-498D-87F5-3F0747F3514C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{046D1DA0-495F-498D-87F5-3F0747F3514C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABBEDE52-81CA-426F-92B0-1C6DD86D1B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABBEDE52-81CA-426F-92B0-1C6DD86D1B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABBEDE52-81CA-426F-92B0-1C6DD86D1B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABBEDE52-81CA-426F-92B0-1C6DD86D1B92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
