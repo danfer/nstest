@@ -9,15 +9,19 @@ namespace nstest.web.Controllers
 {
     public class ComicController : Controller
     {
-        [Route("Comic/{id:int}/{currentId:int}")]
-        public async Task<IActionResult> Index(int id, int currentId)
+        [Route("comic/{id:int}")]
+        public async Task<IActionResult> Index(int id)
         {
-            var viewModel = await new ComicViewModel().GetComic(id, currentId);
+            int currentComicId = Convert.ToInt32(TempData["CurrentComicId"]);          
 
-            if (viewModel.Comic.NextComicId > currentId)
+            var viewModel = await new ComicViewModel().GetComic(id, currentComicId);
+
+            TempData["CurrentComicId"] = currentComicId;
+
+            if (viewModel.Comic.NextComicId > currentComicId)
                 return RedirectToAction("Index", "Home");
             if (viewModel.Comic.Unavailable)
-                return RedirectToAction("Index", new { id = id + 1, currentId = currentId });
+                return RedirectToAction("Index", new { id = id + 1 });
 
             return View(viewModel);
         }

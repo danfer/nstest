@@ -22,6 +22,8 @@ namespace nstest.web.Controllers
         public async Task<IActionResult> Index()
         {
             var viewModel = await new HomeViewModel().GetMostRecentComic();
+
+            TempData["CurrentComicId"] = viewModel.Comic.CurrentComicId;
             
             return View(viewModel);
         }
