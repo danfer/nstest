@@ -12,10 +12,10 @@
                     </div>
                     <div class="card-body align-content-center">
                         <div>
-                            <img src="@Model.Comic.img" alt="@Model.Comic.title" style="height: 100%; width: 100%;">
+                            <img src="@Model.img" alt="@Model.title" style="height: 100%; width: 100%;">
                         </div>
                         <div>
-                            <span> Title: @Model.Comic.title</span>
+                            <span> Title: @Model.title</span>
                         </div>                        
                     </div>
                     <div class="card-footer"></div>
@@ -37,8 +37,8 @@
             <div style="padding-left: 20px; padding-top: 10px;">
                 <a asp-controller="Comic"
                    asp-action="Index"
-                   asp-route-id="@Model.Comic.PreviousComicId"
-                   title="@Model.Comic.title">Previous</a>
+                   asp-route-id="@Model.PreviousComicId"
+                   title="@Model.title">Previous</a>
             </div>
         </div>
     </div>

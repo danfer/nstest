@@ -23,7 +23,7 @@ namespace nstest.web.Controllers
         {
             var viewModel = await new HomeViewModel().GetMostRecentComic();
 
-            TempData["CurrentComicId"] = viewModel.Comic.CurrentComicId;
+            TempData["CurrentComicId"] = viewModel.CurrentComicId;
             
             return View(viewModel);
         }

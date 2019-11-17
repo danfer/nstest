@@ -18,9 +18,9 @@ namespace nstest.web.Controllers
 
             TempData["CurrentComicId"] = currentComicId;
 
-            if (viewModel.Comic.NextComicId > currentComicId)
+            if (viewModel.GoBackToCurrent)
                 return RedirectToAction("Index", "Home");
-            if (viewModel.Comic.Unavailable)
+            if (viewModel.Unavailable)
                 return RedirectToAction("Index", new { id = id + 1 });
 
             return View(viewModel);

@@ -7,45 +7,43 @@ using System.Threading.Tasks;
 
 namespace nstest.web.ViewModels
 {
-    public class ComicViewModel
+    public class ComicViewModel: XKCDDTO
     {
-        public XKCDDTO Comic { get; set; }
+        public int PreviousComicId { get; set; }
+        public int CurrentComicId { get; set; }
+        public int NextComicId { get; set; }
+        public bool Unavailable { get; set; }
+        public bool IsTheFirstOne { get; set; }
+        public bool GoBackToCurrent { get; set; }
         public async Task<ComicViewModel> GetComic(int id, int currentId)
         {
             try
             {
                 var viewModel = new ComicViewModel();
-                
+
+                if (id >= currentId)
+                {
+                    viewModel.GoBackToCurrent = true;
+                    return viewModel;
+                }
+
                 var raw = await XKCD.GetComic(id);
 
                 if (raw == null)
                 {
-                    if (id < currentId)
-                    {
-                        viewModel.Comic = new XKCDDTO { Unavailable = true };
-                        return viewModel;
-                    }
-                    else
-                    {
-                        viewModel.Comic = new XKCDDTO { NextComicId = id + 1 };
-                        return viewModel;
-                    }                    
+                    viewModel.Unavailable = true;
+                    return viewModel;
                 }
+                if (id == 1)
+                    viewModel.IsTheFirstOne = true;
               
-                var previousComicId = 0;
-                var nextComicId = id + 1;
+                viewModel.PreviousComicId = 0;
+                viewModel.NextComicId = id + 1;
                 if (raw.num > 0)
-                    previousComicId = raw.num - 1;
-               
-                viewModel.Comic = new XKCDDTO
-                {
-                    title = raw.title,
-                    link = raw.link,
-                    img = raw.img,
-                    PreviousComicId = previousComicId,
-                    NextComicId = nextComicId,
-                    CurrentComicId = currentId
-                };
+                    viewModel.PreviousComicId = raw.num - 1;
+
+                viewModel.title = raw.title;
+                viewModel.img = raw.img;
 
                 return viewModel;
             }

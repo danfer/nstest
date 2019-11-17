@@ -5,30 +5,29 @@ using System.Threading.Tasks;
 
 namespace nstest.web.ViewModels
 {
-    public class HomeViewModel
+    public class HomeViewModel : XKCDDTO
     {
-        public XKCDDTO Comic { get; set; }
+        public int PreviousComicId { get; set; }
+        public int CurrentComicId { get; set; }
+        public int NextComicId { get; set; }
         public async Task<HomeViewModel> GetMostRecentComic()
         {
             try
             {
-                var raw =  await XKCD.GetMostRecentComic();
+                var raw = await XKCD.GetMostRecentComic();
 
                 var viewModel = new HomeViewModel();
 
                 var previousComicId = 0;
-                
+
                 if (raw.num > 0)
                     previousComicId = raw.num - 1;
 
-                viewModel.Comic = new XKCDDTO 
-                { 
-                    title = raw.title,
-                    link = raw.link,
-                    img = raw.img,
-                    PreviousComicId = previousComicId,
-                    CurrentComicId = raw.num
-                };
+                viewModel.PreviousComicId = previousComicId;
+                viewModel.CurrentComicId = raw.num;
+
+                viewModel.title = raw.title;
+                viewModel.img = raw.img;
 
                 return viewModel;
             }
@@ -36,7 +35,7 @@ namespace nstest.web.ViewModels
             {
                 throw;
             }
-           
+
         }
     }
 }
