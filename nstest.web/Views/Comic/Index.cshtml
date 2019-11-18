@@ -20,36 +20,25 @@
                 </div>
                 <div class="card-footer"></div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-
-                </div>
-                <div class="card-body">
-
-                </div>
-                <div class="card-footer"></div>
-            </div>
-        </div>
+        </div>     
     </div>
-    <div class="row">
-        <div class="col-sm-6">
+    <div class="row col-xs-12" style="display: flex;">
+        <div class="col-xs-2" style="display: inline-block;">
             @if (!@Model.IsTheFirstOne)
             {
                 <a asp-controller="Comic"
                    asp-action="Index"
                    asp-route-id="@Model.PreviousComicId"
                    title="@Model.title"
-                   style="padding-top: 10px;">Previous</a>
+                   style="padding-top:10px;padding-left:15px;">Previous</a>
             }
         </div>
-        <div class="col-sm-6">           
+        <div class="col-xs-6" style="display: inline-block;width: 50%;"></div>
+        <div class="col-xs-2" style="display: inline-block;justify-content:end;">
             <a asp-controller="Comic"
                asp-action="Index"
                asp-route-id="@Model.NextComicId"
-               asp-
-               title="@Model.title"
+               asp-title="@Model.title"
                style="padding-top: 10px;">Next</a>
         </div>
     </div>
